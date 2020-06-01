@@ -46,7 +46,7 @@ public class StatsService {
         int counter = 0;
         int avgSum = findAvgSum(massiv);
         for (int currentVallue : massiv) {
-            counter = currentVallue < avgSum ? ++counter : counter;
+            if (currentVallue < avgSum) counter++;
         }
         return counter;
     }
@@ -55,7 +55,7 @@ public class StatsService {
         int counter = 0;
         int avgSum = findAvgSum(massiv);
         for (int currentVallue : massiv) {
-            counter = currentVallue > avgSum ? ++counter : counter;
+            if (currentVallue > avgSum) counter++;
         }
         return counter;
     }
